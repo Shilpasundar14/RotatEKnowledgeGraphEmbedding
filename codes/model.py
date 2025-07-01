@@ -316,6 +316,8 @@ class KGEModel(nn.Module):
         Evaluate the model on test or valid datasets
         '''
         
+        if args.cuda:
+            model = model.cuda()
         model.eval()
         
         if args.countries:
