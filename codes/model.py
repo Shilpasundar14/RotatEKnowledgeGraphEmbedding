@@ -81,6 +81,9 @@ class KGEModel(nn.Module):
 
         if mode == 'single':
             batch_size, negative_sample_size = sample.size(0), 1
+
+        # Convert sample to LongTensor if it's not already
+            sample = sample.long()
             
             head = torch.index_select(
                 self.entity_embedding, 

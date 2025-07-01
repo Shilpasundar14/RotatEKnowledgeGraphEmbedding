@@ -1,7 +1,10 @@
 import torch
+import sys
+sys.path.append('/proj/jchunglab/projects/ec_moa/RotatE/codes')
 from model import KGEModel
 import os
 from tqdm import tqdm
+import torch.nn.functional as F
 
 # === CONFIG ===
 checkpoint_dir = "/proj/jchunglab/projects/ec_moa/KGs/ROBOKOP_30fd_baseline2_CCDD_noSubclassOf/protoroborotor_derived/CCDD/trained_models"
@@ -67,32 +70,52 @@ with open(output_file, "w") as out:
             double_relation_embedding=False
         )
 
+        # Check if CUDA is available, and move model to GPU if it is
+        if torch.cuda.is_available():
+            model = model.cuda()
+
         checkpoint = torch.load(ckpt_path)
-        model.load_state_dict(checkpoint)
+        model.load_state_dict(checkpoint['model_state_dict'], strict=False) # Load only the model parameters 
         model.eval()
 
         for test in test_triples:
+            # Keep as LongTensor for indexing
             test_tensor = torch.LongTensor([[entity2id[test[0]], relation2id[test[1]], entity2id[test[2]]]])
-            test_tensor.requires_grad = True
+
+            # Move tensor to GPU if CUDA is available
+            if torch.cuda.is_available():
+                test_tensor = test_tensor.cuda()
+
+            # Convert to FloatTensor for forward propagation
+            float_test_tensor = test_tensor.float() 
+            float_test_tensor.requires_grad = True
 
             model.zero_grad()
-            test_score = model(test_tensor)
-            test_loss = torch.logsigmoid(test_score).mean()
+            test_score = model(float_test_tensor)
+            test_loss = F.logsigmoid(test_score).mean()
             test_loss.backward()
 
             test_grads = []
             for p in model.parameters():
                 if p.grad is not None:
                     test_grads.append(p.grad.detach().clone().view(-1))
-            test_grad_flat = torch.cat(test_grads)
+            test_grad_flat = torch.cat(test_grads)  # Flatten gradients for the test set
 
             for train in train_triples:
+                # Keep as LongTensor for indexing
                 train_tensor = torch.LongTensor([[entity2id[train[0]], relation2id[train[1]], entity2id[train[2]]]])
-                train_tensor.requires_grad = True
+
+                # Move tensor to GPU if CUDA is available
+                if torch.cuda.is_available():
+                    train_tensor = train_tensor.cuda()
+
+                # Convert to FloatTensor for forward propagation
+                float_train_tensor = train_tensor.float() 
+                float_train_tensor.requires_grad = True
 
                 model.zero_grad()
-                train_score = model(train_tensor)
-                train_loss = torch.logsigmoid(train_score).mean()
+                train_score = model(float_train_tensor)
+                train_loss = F.logsigmoid(train_score).mean()
                 train_loss.backward()
 
                 train_grads = []
@@ -104,6 +127,7 @@ with open(output_file, "w") as out:
                 # Dot product
                 influence = torch.dot(train_grad_flat, test_grad_flat).item()
 
-                # Write to file
+                # Write to csv file
                 out.write(f"{ckpt},{train[0]},{train[1]},{train[2]},{test[0]},{test[1]},{test[2]},{influence}\n")
 
+print(f"Influence scores saved to {output_file}")
