@@ -10,10 +10,10 @@ import torch.nn.functional as F
 checkpoint_dir = "/proj/jchunglab/projects/ec_moa/KGs/ROBOKOP_30fd_baseline2_CCDD_noSubclassOf/protoroborotor_derived/CCDD/trained_models"
 checkpoint_files = sorted([f for f in os.listdir(checkpoint_dir) if f.endswith(".pt")])
 
-entities_file = "data/rotate_protorobo_CCDD/entities.dict"
-relations_file = "data/rotate_protorobo_CCDD/relations.dict"
-train_file = "data/rotate_protorobo_CCDD/train.txt"
-test_file = "data/rotate_protorobo_CCDD/test.txt"
+entities_file = "data/rotate_protorobo_CCD/entities.dict"
+relations_file = "data/rotate_protorobo_CCD/relations.dict"
+train_file = "data/rotate_protorobo_CCD/train.txt"
+test_file = "data/rotate_protorobo_CCD/test.txt"
 
 output_file = "tracin_cp_scores.csv"
 
