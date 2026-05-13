@@ -1,5 +1,116 @@
+# TracIn-CP × RotatE on the ROBOKOP Biomedical Knowledge Graph
 
-# RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space
+> Research fork of [DeepGraphLearning/KnowledgeGraphEmbedding](https://github.com/DeepGraphLearning/KnowledgeGraphEmbedding) (the official RotatE implementation from [Sun et al., ICLR 2019](https://openreview.net/forum?id=HkgEQnRqYQ)).
+>
+> The upstream RotatE README is preserved verbatim [below the horizontal rule](#-upstream-readme-rotate-knowledge-graph-embedding-by-relational-rotation-in-complex-space).
+
+## What this fork adds
+
+This fork extends the upstream RotatE training pipeline with **TracIn-CP** ([Pruthi et al., NeurIPS 2020](https://arxiv.org/abs/2002.08484)) training-data influence analysis, applied to subgraphs of the **ROBOKOP** biomedical knowledge graph ([Bizon et al., RENCI/UNC](https://robokop.renci.org/)). The goal is interpretability: given a *test* triple that RotatE predicts (or fails to predict), identify which *training* triples actually moved the model toward that prediction.
+
+Three subgraphs of increasing schema complexity are studied:
+
+| Subgraph | Node types | Use |
+| --- | --- | --- |
+| CCD   | Chemical–Chemical–Disease | First TracIn-CP run; baseline |
+| CCDD  | Chemical–Chemical–Disease–Disease (adds disease–disease edges) | Co-morbidity structure |
+| CCGGDD | Chemical–Chemical–Gene–Gene–Disease–Disease | Full chemical→gene→disease path; the setting used in the headline results |
+
+## TracIn-CP, briefly
+
+For a checkpoint set `{θ_t}` produced during training, the TracIn-CP score of a training triple `z_train` on a test triple `z_test` is
+
+```
+TracIn-CP(z_train, z_test) = Σ_t  η_t · ⟨ ∇L(z_train; θ_t),  ∇L(z_test; θ_t) ⟩
+```
+
+i.e. the sum, over checkpoints, of dot products between per-example loss gradients. A large positive value means `z_train` *helped* the model predict `z_test`; a large negative value means `z_train` *hurt* that prediction; near-zero values are irrelevant. We compute this with RotatE's `logsigmoid` margin loss and average over the per-parameter gradients of `model.parameters()`.
+
+## Repository layout
+
+```
+.
+├── codes/                              # upstream RotatE training code
+│   ├── run.py                          #   + --cpu_test flag (memory-bound eval)
+│   ├── model.py
+│   └── dataloader.py
+├── compute_tracin_cp.py                # main TracIn-CP score computation
+├── analyze_tracin_CP_CCGGDDsubgraph.py # top/bottom influential triples per test
+├── benchmark_tracin_one_test.py        # wall-clock benchmark, one test vs all train
+├── selfscores.py                       # self-to-self influence sanity check
+├── map_tracin_ids_to_names.py          # CHEBI/HP/MONDO IDs → human-readable names
+├── plot_rotate_CCDD_results.py         # training/val curves for CCDD
+├── plot_rotate_CCGGDD_results.py       # training/val curves for CCGGDD
+├── data/
+│   ├── rotate_protorobo_CCDD/          # CCDD splits (full)
+│   └── rotate_protorobo_CCGGDD/        # CCGGDD splits (train.txt excluded — 327 MB, see below)
+├── train_matrix_subgraph_CCDD.slurm    # cluster training scripts
+├── train_matrix_subgraph_CCGGDD.slurm
+├── run_tracin_cp.slurm                 # TracIn-CP scoring job
+├── rotate_CCDD.log, rotate_CCGGDD.log  # full training logs
+├── rotate_CCDD_*.png, rotate_CCGGDD_*.png   # MRR / MR / HITS@10 / loss curves
+└── tracin_cp_scores_*.csv              # raw influence scores
+```
+
+## Reproducing the headline (CCGGDD) experiment
+
+> The CCGGDD `train.txt` is 327 MB and exceeds GitHub's 100 MB file limit. Regenerate it from ROBOKOP using `convert_rotorobo_to_rotate.py` (the script consumes the raw `rotorobo.txt` export — pointers in the script docstring). The entity/relation dictionaries and the `valid.txt` / `test.txt` splits are committed.
+
+1. **Train RotatE on CCGGDD, saving multiple checkpoints** (this is what TracIn-CP needs — it sums dot products across `t`):
+   ```
+   sbatch train_matrix_subgraph_CCGGDD.slurm
+   ```
+   Output: `models/RotatE_CCGGDD/checkpoint_*.pt` and `rotate_CCGGDD_*.png` plots.
+
+2. **Compute TracIn-CP influence scores** for selected test triples against the training set:
+   ```
+   sbatch run_tracin_cp.slurm   # wraps compute_tracin_cp.py
+   ```
+   Output: `tracin_cp_scores_CCGGDD_models2_10_26.csv` (one row per `(checkpoint, train_triple, test_triple)`).
+
+3. **Map opaque biomedical IDs to readable names** (CHEBI:5781 → "chlorothiazide", HP:0002239 → "gingival bleeding", etc.):
+   ```
+   python map_tracin_ids_to_names.py
+   ```
+   Output: `tracin_cp_scores_CCGGDD_models2_10_26_mapped.csv`.
+
+4. **Analyze** — find the test triples with the most diverse influential training relations, and the most influential / counter-influential training triples per test:
+   ```
+   python analyze_tracin_CP_CCGGDDsubgraph.py
+   ```
+
+## Computational notes
+
+- TracIn-CP cost is `O(|test| · |train| · |checkpoints|)` gradient evaluations. `benchmark_tracin_one_test.py` measures one test triple against the full CCGGDD train set and reports the projected cost for 10 000 test triples — useful before launching a multi-day job.
+- For the CCGGDD model we used checkpoint indices `{2, 10, 26}` (early / mid / late training), which is the configuration baked into `tracin_cp_scores_CCGGDD_models2_10_26.csv`.
+- `--cpu_test` in `codes/run.py` evaluates on CPU after each training block; useful when the CCGGDD entity embedding table doesn't fit alongside a full evaluation batch on a single GPU.
+
+## Citations
+
+If you use this fork, please cite both the upstream RotatE paper and the TracIn-CP paper:
+
+```bibtex
+@inproceedings{sun2019rotate,
+  title     = {RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space},
+  author    = {Zhiqing Sun and Zhi-Hong Deng and Jian-Yun Nie and Jian Tang},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2019},
+  url       = {https://openreview.net/forum?id=HkgEQnRqYQ}
+}
+
+@inproceedings{pruthi2020tracin,
+  title     = {Estimating Training Data Influence by Tracing Gradient Descent},
+  author    = {Garima Pruthi and Frederick Liu and Satyen Kale and Mukund Sundararajan},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2020},
+  url       = {https://arxiv.org/abs/2002.08484}
+}
+```
+
+---
+
+# 📄 Upstream README: RotatE: Knowledge Graph Embedding by Relational Rotation in Complex Space
+
 **Introduction**
 
 This is the PyTorch implementation of the [RotatE](https://openreview.net/forum?id=HkgEQnRqYQ) model for knowledge graph embedding (KGE). We provide a toolkit that gives state-of-the-art performance of several popular KGE models. The toolkit is quite efficient, which is able to train a large KGE model within a few hours on a single GPU.
