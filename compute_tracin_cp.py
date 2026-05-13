@@ -7,15 +7,15 @@ from tqdm import tqdm
 import torch.nn.functional as F
 
 # === CONFIG ===
-checkpoint_dir = "/proj/jchunglab/projects/ec_moa/KGs/ROBOKOP_30fd_baseline2_CCDD_noSubclassOf/protoroborotor_derived/CCDD/trained_models"
+checkpoint_dir = "/proj/jchunglab/projects/ec_moa/KGs/ROBOKOP_30fd_baseline2_CCGGDD_noSubclassOf/trained_models"
 checkpoint_files = sorted([f for f in os.listdir(checkpoint_dir) if f.endswith(".pt")])
 
-entities_file = "data/rotate_protorobo_CCD/entities.dict"
-relations_file = "data/rotate_protorobo_CCD/relations.dict"
-train_file = "data/rotate_protorobo_CCD/train.txt"
-test_file = "data/rotate_protorobo_CCD/test.txt"
+entities_file = "data/rotate_protorobo_CCGGDD/entities.dict"
+relations_file = "data/rotate_protorobo_CCGGDD/relations.dict"
+train_file = "data/rotate_protorobo_CCGGDD/train.txt"
+test_file = "data/rotate_protorobo_CCGGDD/test_batch5.txt"
 
-output_file = "tracin_cp_scores.csv"
+output_file = "tracin_cp_scores_CCGGDD_models2_10_26.csv"
 
 # === Load dicts ===
 entity2id = {}
@@ -33,6 +33,7 @@ with open(relations_file) as f:
 
 nentity = len(entity2id)
 nrelation = len(relation2id)
+print(f"Size of the entity: {nentity}, Size of the relation: {nrelation}")
 
 # === Load a few test triples (pick first 5 for demo) ===
 test_triples = []
@@ -53,8 +54,10 @@ with open(train_file) as f:
         train_triples.append((h, r, t))
 
 # === Open output ===
-with open(output_file, "w") as out:
-    out.write("checkpoint,train_h,train_r,train_t,test_h,test_r,test_t,influence\n")
+file_exists = os.path.exists(output_file)
+with open(output_file, "a") as out:
+    if not file_exists:
+        out.write("checkpoint,train_h,train_r,train_t,test_h,test_r,test_t,influence\n")
 
     for ckpt in tqdm(checkpoint_files):
         ckpt_path = os.path.join(checkpoint_dir, ckpt)
@@ -70,21 +73,13 @@ with open(output_file, "w") as out:
             double_relation_embedding=False
         )
 
-        # Check if CUDA is available, and move model to GPU if it is
-        if torch.cuda.is_available():
-            model = model.cuda()
-
-        checkpoint = torch.load(ckpt_path)
+        checkpoint = torch.load(ckpt_path, map_location=torch.device('cpu'))
         model.load_state_dict(checkpoint['model_state_dict'], strict=False) # Load only the model parameters 
         model.eval()
 
         for test in test_triples:
             # Keep as LongTensor for indexing
             test_tensor = torch.LongTensor([[entity2id[test[0]], relation2id[test[1]], entity2id[test[2]]]])
-
-            # Move tensor to GPU if CUDA is available
-            if torch.cuda.is_available():
-                test_tensor = test_tensor.cuda()
 
             # Convert to FloatTensor for forward propagation
             float_test_tensor = test_tensor.float() 
@@ -104,10 +99,6 @@ with open(output_file, "w") as out:
             for train in train_triples:
                 # Keep as LongTensor for indexing
                 train_tensor = torch.LongTensor([[entity2id[train[0]], relation2id[train[1]], entity2id[train[2]]]])
-
-                # Move tensor to GPU if CUDA is available
-                if torch.cuda.is_available():
-                    train_tensor = train_tensor.cuda()
 
                 # Convert to FloatTensor for forward propagation
                 float_train_tensor = train_tensor.float() 

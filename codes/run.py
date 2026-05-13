@@ -68,6 +68,8 @@ def parse_args(args=None):
     parser.add_argument('--nentity', type=int, default=0, help='DO NOT MANUALLY SET')
     parser.add_argument('--nrelation', type=int, default=0, help='DO NOT MANUALLY SET')
     
+    parser.add_argument('--cpu_test', action='store_true', help='Run evaluation on CPU to save GPU memory')
+
     return parser.parse_args(args)
 
 def override_config(args):
@@ -332,8 +334,13 @@ def main(args):
                 
             if args.do_valid and step % args.valid_steps == 0:
                 logging.info('Evaluating on Valid Dataset...')
+                if args.cpu_test:
+                    kge_model = kge_model.cpu()
                 metrics = kge_model.test_step(kge_model, valid_triples, all_true_triples, args)
+                if args.cpu_test:
+                    kge_model = kge_model.cuda()
                 log_metrics('Valid', step, metrics)
+
         
         save_variable_list = {
             'step': step, 
@@ -342,20 +349,32 @@ def main(args):
         }
         save_model(kge_model, optimizer, save_variable_list, args)
         
-    if args.do_valid:
-        logging.info('Evaluating on Valid Dataset...')
-        metrics = kge_model.test_step(kge_model, valid_triples, all_true_triples, args)
-        log_metrics('Valid', step, metrics)
-    
-    if args.do_test:
-        logging.info('Evaluating on Test Dataset...')
-        metrics = kge_model.test_step(kge_model, test_triples, all_true_triples, args)
-        log_metrics('Test', step, metrics)
-    
-    if args.evaluate_train:
-        logging.info('Evaluating on Training Dataset...')
-        metrics = kge_model.test_step(kge_model, train_triples, all_true_triples, args)
-        log_metrics('Test', step, metrics)
-        
+        if args.do_valid:
+            logging.info('Evaluating on Valid Dataset...')
+            if args.cpu_test:
+                kge_model = kge_model.cpu()
+            metrics = kge_model.test_step(kge_model, valid_triples, all_true_triples, args)
+            if args.cpu_test:
+                kge_model = kge_model.cuda()
+            log_metrics('Valid', step, metrics)
+
+        if args.do_test:
+            logging.info('Evaluating on Test Dataset...')
+            if args.cpu_test:
+                kge_model = kge_model.cpu()
+            metrics = kge_model.test_step(kge_model, test_triples, all_true_triples, args)
+            if args.cpu_test:
+                kge_model = kge_model.cuda()
+            log_metrics('Test', step, metrics)
+
+        if args.evaluate_train:
+            logging.info('Evaluating on Training Dataset...')
+            if args.cpu_test:
+                kge_model = kge_model.cpu()
+            metrics = kge_model.test_step(kge_model, train_triples, all_true_triples, args)
+            if args.cpu_test:
+                kge_model = kge_model.cuda()
+            log_metrics('Test', step, metrics)
+
 if __name__ == '__main__':
     main(parse_args())

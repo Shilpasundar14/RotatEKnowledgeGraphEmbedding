@@ -1,0 +1,137 @@
+CUDA? True
+/workspace/data/protoroborotor/src/run_rot.py
+/workspace/data/protoroborotor/src/../../robokop/CCGGDD
+Processing...
+Done!
+Start data loader
+model loader done.
+Epoch: 001, Loss: 2.4699
+Epoch: 002, Loss: 1.8142
+Saving Model
+Testing Model
+Epoch: 002, Val Mean Rank: 1255892.38, Val MRR: 0.0001, Val Hits@10: 0.0001
+Epoch: 003, Loss: 1.3893
+Epoch: 004, Loss: 0.8537
+Saving Model
+Testing Model
+Epoch: 004, Val Mean Rank: 440967.91, Val MRR: 0.0143, Val Hits@10: 0.0311
+Epoch: 005, Loss: 0.5834
+Epoch: 006, Loss: 0.4499
+Saving Model
+Testing Model
+Epoch: 006, Val Mean Rank: 321126.41, Val MRR: 0.0153, Val Hits@10: 0.0335
+Epoch: 007, Loss: 0.3630
+Epoch: 008, Loss: 0.2970
+Saving Model
+Testing Model
+Epoch: 008, Val Mean Rank: 268133.59, Val MRR: 0.0161, Val Hits@10: 0.0363
+Epoch: 009, Loss: 0.2433
+Epoch: 010, Loss: 0.1993
+Saving Model
+Testing Model
+Epoch: 010, Val Mean Rank: 196807.19, Val MRR: 0.0195, Val Hits@10: 0.0445
+Epoch: 011, Loss: 0.1641
+Epoch: 012, Loss: 0.1370
+Saving Model
+Testing Model
+Epoch: 012, Val Mean Rank: 127406.54, Val MRR: 0.0265, Val Hits@10: 0.0600
+Epoch: 013, Loss: 0.1167
+Epoch: 014, Loss: 0.1016
+Saving Model
+Testing Model
+Epoch: 014, Val Mean Rank: 76661.75, Val MRR: 0.0385, Val Hits@10: 0.0819
+Epoch: 015, Loss: 0.0905
+Epoch: 016, Loss: 0.0823
+Saving Model
+Testing Model
+Epoch: 016, Val Mean Rank: 43984.02, Val MRR: 0.0507, Val Hits@10: 0.1021
+Epoch: 017, Loss: 0.0761
+Epoch: 018, Loss: 0.0711
+Saving Model
+Testing Model
+Epoch: 018, Val Mean Rank: 27344.93, Val MRR: 0.0588, Val Hits@10: 0.1145
+Epoch: 019, Loss: 0.0672
+Epoch: 020, Loss: 0.0641
+Saving Model
+Testing Model
+Epoch: 020, Val Mean Rank: 19584.85, Val MRR: 0.0644, Val Hits@10: 0.1233
+Epoch: 021, Loss: 0.0616
+Epoch: 022, Loss: 0.0594
+Saving Model
+Testing Model
+Epoch: 022, Val Mean Rank: 15724.75, Val MRR: 0.0694, Val Hits@10: 0.1302
+Epoch: 023, Loss: 0.0575
+Epoch: 024, Loss: 0.0559
+Saving Model
+Testing Model
+Epoch: 024, Val Mean Rank: 13138.23, Val MRR: 0.0714, Val Hits@10: 0.1317
+Epoch: 025, Loss: 0.0544
+Epoch: 026, Loss: 0.0530
+Saving Model
+Testing Model
+Epoch: 026, Val Mean Rank: 11641.92, Val MRR: 0.0739, Val Hits@10: 0.1366
+Epoch: 027, Loss: 0.0520
+Epoch: 028, Loss: 0.0510
+Saving Model
+Testing Model
+Epoch: 028, Val Mean Rank: 10667.35, Val MRR: 0.0754, Val Hits@10: 0.1387
+Epoch: 029, Loss: 0.0501
+Epoch: 030, Loss: 0.0492
+Saving Model
+Testing Model
+Epoch: 030, Val Mean Rank: 10006.78, Val MRR: 0.0761, Val Hits@10: 0.1406
+Epoch: 031, Loss: 0.0486
+Epoch: 032, Loss: 0.0477
+Saving Model
+Testing Model
+Epoch: 032, Val Mean Rank: 9319.30, Val MRR: 0.0772, Val Hits@10: 0.1414
+Epoch: 033, Loss: 0.0472
+Epoch: 034, Loss: 0.0466
+Saving Model
+Testing Model
+Epoch: 034, Val Mean Rank: 8950.65, Val MRR: 0.0785, Val Hits@10: 0.1423
+Epoch: 035, Loss: 0.0460
+Epoch: 036, Loss: 0.0454
+Saving Model
+Testing Model
+Epoch: 036, Val Mean Rank: 8640.37, Val MRR: 0.0789, Val Hits@10: 0.1439
+Epoch: 037, Loss: 0.0450
+Epoch: 038, Loss: 0.0446
+Saving Model
+Testing Model
+Epoch: 038, Val Mean Rank: 8390.70, Val MRR: 0.0794, Val Hits@10: 0.1444
+Epoch: 039, Loss: 0.0442
+Epoch: 040, Loss: 0.0439
+Saving Model
+Testing Model
+Epoch: 040, Val Mean Rank: 8200.57, Val MRR: 0.0793, Val Hits@10: 0.1455
+Epoch: 041, Loss: 0.0434
+Epoch: 042, Loss: 0.0431
+Saving Model
+Testing Model
+Epoch: 042, Val Mean Rank: 8019.94, Val MRR: 0.0801, Val Hits@10: 0.1452
+Epoch: 043, Loss: 0.0428
+Epoch: 044, Loss: 0.0425
+Saving Model
+Testing Model
+Epoch: 044, Val Mean Rank: 7889.18, Val MRR: 0.0802, Val Hits@10: 0.1463
+Epoch: 045, Loss: 0.0423
+Epoch: 046, Loss: 0.0421
+Saving Model
+Testing Model
+Epoch: 046, Val Mean Rank: 7723.69, Val MRR: 0.0808, Val Hits@10: 0.1470
+Epoch: 047, Loss: 0.0418
+Epoch: 048, Loss: 0.0416
+Saving Model
+Testing Model
+Epoch: 048, Val Mean Rank: 7514.48, Val MRR: 0.0811, Val Hits@10: 0.1478
+Epoch: 049, Loss: 0.0414
+Epoch: 050, Loss: 0.0410
+Saving Model
+Testing Model
+Epoch: 050, Val Mean Rank: 7480.11, Val MRR: 0.0808, Val Hits@10: 0.1477
+Epoch: 051, Loss: 0.0410
+Epoch: 052, Loss: 0.0408
+Saving Model
+Testing Model
+Epoch: 052, Val Mean Rank: 7371.78, Val MRR: 0.0812, Val Hits@10: 0.1481

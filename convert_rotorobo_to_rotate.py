@@ -3,8 +3,8 @@ from pathlib import Path
 from sklearn.model_selection import train_test_split
 
 # Paths
-input_file = Path("/proj/jchunglab/projects/ec_moa/data/protoroborotor_rotate_input/rotorobo.txt")
-output_dir = Path("data/rotate_protorobo_CCDD")
+input_file = Path("/proj/jchunglab/projects/ec_moa/KGs/ROBOKOP_30fd_baseline2_CCGGDD_noSubclassOf/raw/raw/rotorobo.txt")
+output_dir = Path("data/rotate_protorobo_CCGGDD")
 output_dir.mkdir(parents=True, exist_ok=True)
 
 # Load filtered triples

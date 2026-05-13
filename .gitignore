@@ -1,3 +1,9 @@
 checkpoint
 *.npy
 *.log
+*.pt
+*.csv
+*.png
+ROBOKOP_30fd_baseline2_CCGGDD_noSubclassOf/
+models/
+data/rotate_protorobo_CCGGDD/train.txt
