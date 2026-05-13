@@ -1,0 +1,660 @@
+CUDA? True
+/workspace/data/protoroborotor/src/run_rot.py
+/workspace/data/protoroborotor/src/../../robokop/CCDD
+Start data loader
+model loader done.
+Epoch: 001, Loss: 3.4856
+Epoch: 002, Loss: 2.2669
+Epoch: 003, Loss: 1.9188
+Epoch: 004, Loss: 1.7279
+Epoch: 005, Loss: 1.5783
+Epoch: 006, Loss: 1.4218
+Epoch: 007, Loss: 1.2196
+Epoch: 008, Loss: 0.9857
+Epoch: 009, Loss: 0.7740
+Epoch: 010, Loss: 0.6137
+Saving Model
+Testing Model
+Epoch: 010, Val Mean Rank: 24095.06, Val MRR: 0.0113, Val Hits@10: 0.0214
+Epoch: 011, Loss: 0.4995
+Epoch: 012, Loss: 0.4162
+Epoch: 013, Loss: 0.3541
+Epoch: 014, Loss: 0.3078
+Epoch: 015, Loss: 0.2729
+Epoch: 016, Loss: 0.2458
+Epoch: 017, Loss: 0.2254
+Epoch: 018, Loss: 0.2087
+Epoch: 019, Loss: 0.1957
+Epoch: 020, Loss: 0.1850
+Saving Model
+Testing Model
+Epoch: 020, Val Mean Rank: 2940.27, Val MRR: 0.0206, Val Hits@10: 0.0395
+Epoch: 021, Loss: 0.1762
+Epoch: 022, Loss: 0.1685
+Epoch: 023, Loss: 0.1615
+Epoch: 024, Loss: 0.1562
+Epoch: 025, Loss: 0.1513
+Epoch: 026, Loss: 0.1464
+Epoch: 027, Loss: 0.1420
+Epoch: 028, Loss: 0.1386
+Epoch: 029, Loss: 0.1347
+Epoch: 030, Loss: 0.1321
+Saving Model
+Testing Model
+Epoch: 030, Val Mean Rank: 1699.62, Val MRR: 0.0336, Val Hits@10: 0.0625
+Epoch: 031, Loss: 0.1293
+Epoch: 032, Loss: 0.1264
+Epoch: 033, Loss: 0.1242
+Epoch: 034, Loss: 0.1221
+Epoch: 035, Loss: 0.1199
+Epoch: 036, Loss: 0.1182
+Epoch: 037, Loss: 0.1171
+Epoch: 038, Loss: 0.1145
+Epoch: 039, Loss: 0.1136
+Epoch: 040, Loss: 0.1120
+Saving Model
+Testing Model
+Epoch: 040, Val Mean Rank: 1431.89, Val MRR: 0.0383, Val Hits@10: 0.0716
+Epoch: 041, Loss: 0.1108
+Epoch: 042, Loss: 0.1093
+Epoch: 043, Loss: 0.1086
+Epoch: 044, Loss: 0.1070
+Epoch: 045, Loss: 0.1062
+Epoch: 046, Loss: 0.1052
+Epoch: 047, Loss: 0.1042
+Epoch: 048, Loss: 0.1032
+Epoch: 049, Loss: 0.1029
+Epoch: 050, Loss: 0.1024
+Saving Model
+Testing Model
+Epoch: 050, Val Mean Rank: 1325.41, Val MRR: 0.0385, Val Hits@10: 0.0744
+Epoch: 051, Loss: 0.1012
+Epoch: 052, Loss: 0.1008
+Epoch: 053, Loss: 0.0998
+Epoch: 054, Loss: 0.0993
+Epoch: 055, Loss: 0.0985
+Epoch: 056, Loss: 0.0984
+Epoch: 057, Loss: 0.0978
+Epoch: 058, Loss: 0.0975
+Epoch: 059, Loss: 0.0970
+Epoch: 060, Loss: 0.0962
+Saving Model
+Testing Model
+Epoch: 060, Val Mean Rank: 1268.16, Val MRR: 0.0378, Val Hits@10: 0.0761
+Epoch: 061, Loss: 0.0957
+Epoch: 062, Loss: 0.0952
+Epoch: 063, Loss: 0.0948
+Epoch: 064, Loss: 0.0945
+Epoch: 065, Loss: 0.0940
+Epoch: 066, Loss: 0.0938
+Epoch: 067, Loss: 0.0932
+Epoch: 068, Loss: 0.0930
+Epoch: 069, Loss: 0.0924
+Epoch: 070, Loss: 0.0924
+Saving Model
+Testing Model
+Epoch: 070, Val Mean Rank: 1235.53, Val MRR: 0.0376, Val Hits@10: 0.0765
+Epoch: 071, Loss: 0.0925
+Epoch: 072, Loss: 0.0917
+Epoch: 073, Loss: 0.0913
+Epoch: 074, Loss: 0.0913
+Epoch: 075, Loss: 0.0909
+Epoch: 076, Loss: 0.0907
+Epoch: 077, Loss: 0.0902
+Epoch: 078, Loss: 0.0900
+Epoch: 079, Loss: 0.0899
+Epoch: 080, Loss: 0.0898
+Saving Model
+Testing Model
+Epoch: 080, Val Mean Rank: 1209.36, Val MRR: 0.0379, Val Hits@10: 0.0780
+Epoch: 081, Loss: 0.0893
+Epoch: 082, Loss: 0.0893
+Epoch: 083, Loss: 0.0890
+Epoch: 084, Loss: 0.0891
+Epoch: 085, Loss: 0.0884
+Epoch: 086, Loss: 0.0886
+Epoch: 087, Loss: 0.0881
+Epoch: 088, Loss: 0.0881
+Epoch: 089, Loss: 0.0879
+Epoch: 090, Loss: 0.0879
+Saving Model
+Testing Model
+Epoch: 090, Val Mean Rank: 1193.45, Val MRR: 0.0378, Val Hits@10: 0.0782
+Epoch: 091, Loss: 0.0878
+Epoch: 092, Loss: 0.0876
+Epoch: 093, Loss: 0.0877
+Epoch: 094, Loss: 0.0875
+Epoch: 095, Loss: 0.0871
+Epoch: 096, Loss: 0.0870
+Epoch: 097, Loss: 0.0866
+Epoch: 098, Loss: 0.0867
+Epoch: 099, Loss: 0.0866
+Epoch: 100, Loss: 0.0864
+Saving Model
+Testing Model
+Epoch: 100, Val Mean Rank: 1181.57, Val MRR: 0.0387, Val Hits@10: 0.0802
+Epoch: 101, Loss: 0.0859
+Epoch: 102, Loss: 0.0863
+Epoch: 103, Loss: 0.0861
+Epoch: 104, Loss: 0.0861
+Epoch: 105, Loss: 0.0860
+Epoch: 106, Loss: 0.0858
+Epoch: 107, Loss: 0.0856
+Epoch: 108, Loss: 0.0855
+Epoch: 109, Loss: 0.0857
+Epoch: 110, Loss: 0.0856
+Saving Model
+Testing Model
+Epoch: 110, Val Mean Rank: 1178.58, Val MRR: 0.0383, Val Hits@10: 0.0796
+Epoch: 111, Loss: 0.0856
+Epoch: 112, Loss: 0.0849
+Epoch: 113, Loss: 0.0850
+Epoch: 114, Loss: 0.0849
+Epoch: 115, Loss: 0.0850
+Epoch: 116, Loss: 0.0845
+Epoch: 117, Loss: 0.0849
+Epoch: 118, Loss: 0.0844
+Epoch: 119, Loss: 0.0844
+Epoch: 120, Loss: 0.0844
+Saving Model
+Testing Model
+Epoch: 120, Val Mean Rank: 1180.32, Val MRR: 0.0376, Val Hits@10: 0.0783
+Epoch: 121, Loss: 0.0842
+Epoch: 122, Loss: 0.0844
+Epoch: 123, Loss: 0.0840
+Epoch: 124, Loss: 0.0838
+Epoch: 125, Loss: 0.0835
+Epoch: 126, Loss: 0.0838
+Epoch: 127, Loss: 0.0842
+Epoch: 128, Loss: 0.0838
+Epoch: 129, Loss: 0.0834
+Epoch: 130, Loss: 0.0838
+Saving Model
+Testing Model
+Epoch: 130, Val Mean Rank: 1188.23, Val MRR: 0.0373, Val Hits@10: 0.0772
+Epoch: 131, Loss: 0.0836
+Epoch: 132, Loss: 0.0835
+Epoch: 133, Loss: 0.0835
+Epoch: 134, Loss: 0.0833
+Epoch: 135, Loss: 0.0840
+Epoch: 136, Loss: 0.0836
+Epoch: 137, Loss: 0.0835
+Epoch: 138, Loss: 0.0833
+Epoch: 139, Loss: 0.0831
+Epoch: 140, Loss: 0.0836
+Saving Model
+Testing Model
+Epoch: 140, Val Mean Rank: 1198.68, Val MRR: 0.0373, Val Hits@10: 0.0777
+Epoch: 141, Loss: 0.0830
+Epoch: 142, Loss: 0.0832
+Epoch: 143, Loss: 0.0829
+Epoch: 144, Loss: 0.0830
+Epoch: 145, Loss: 0.0831
+Epoch: 146, Loss: 0.0829
+Epoch: 147, Loss: 0.0833
+Epoch: 148, Loss: 0.0830
+Epoch: 149, Loss: 0.0827
+Epoch: 150, Loss: 0.0824
+Saving Model
+Testing Model
+Epoch: 150, Val Mean Rank: 1211.02, Val MRR: 0.0373, Val Hits@10: 0.0766
+Epoch: 151, Loss: 0.0827
+Epoch: 152, Loss: 0.0824
+Epoch: 153, Loss: 0.0829
+Epoch: 154, Loss: 0.0826
+Epoch: 155, Loss: 0.0824
+Epoch: 156, Loss: 0.0827
+Epoch: 157, Loss: 0.0826
+Epoch: 158, Loss: 0.0823
+Epoch: 159, Loss: 0.0826
+Epoch: 160, Loss: 0.0825
+Saving Model
+Testing Model
+Epoch: 160, Val Mean Rank: 1230.99, Val MRR: 0.0372, Val Hits@10: 0.0771
+Epoch: 161, Loss: 0.0819
+Epoch: 162, Loss: 0.0823
+Epoch: 163, Loss: 0.0823
+Epoch: 164, Loss: 0.0824
+Epoch: 165, Loss: 0.0824
+Epoch: 166, Loss: 0.0819
+Epoch: 167, Loss: 0.0824
+Epoch: 168, Loss: 0.0820
+Epoch: 169, Loss: 0.0824
+Epoch: 170, Loss: 0.0822
+Saving Model
+Testing Model
+Epoch: 170, Val Mean Rank: 1266.31, Val MRR: 0.0374, Val Hits@10: 0.0771
+Epoch: 171, Loss: 0.0822
+Epoch: 172, Loss: 0.0819
+Epoch: 173, Loss: 0.0819
+Epoch: 174, Loss: 0.0822
+Epoch: 175, Loss: 0.0824
+Epoch: 176, Loss: 0.0821
+Epoch: 177, Loss: 0.0817
+Epoch: 178, Loss: 0.0817
+Epoch: 179, Loss: 0.0823
+Epoch: 180, Loss: 0.0820
+Saving Model
+Testing Model
+Epoch: 180, Val Mean Rank: 1288.29, Val MRR: 0.0371, Val Hits@10: 0.0757
+Epoch: 181, Loss: 0.0815
+Epoch: 182, Loss: 0.0817
+Epoch: 183, Loss: 0.0818
+Epoch: 184, Loss: 0.0817
+Epoch: 185, Loss: 0.0820
+Epoch: 186, Loss: 0.0816
+Epoch: 187, Loss: 0.0818
+Epoch: 188, Loss: 0.0818
+Epoch: 189, Loss: 0.0816
+Epoch: 190, Loss: 0.0814
+Saving Model
+Testing Model
+Epoch: 190, Val Mean Rank: 1315.75, Val MRR: 0.0376, Val Hits@10: 0.0774
+Epoch: 191, Loss: 0.0815
+Epoch: 192, Loss: 0.0813
+Epoch: 193, Loss: 0.0813
+Epoch: 194, Loss: 0.0815
+Epoch: 195, Loss: 0.0812
+Epoch: 196, Loss: 0.0817
+Epoch: 197, Loss: 0.0817
+Epoch: 198, Loss: 0.0817
+Epoch: 199, Loss: 0.0815
+Epoch: 200, Loss: 0.0810
+Saving Model
+Testing Model
+Epoch: 200, Val Mean Rank: 1316.72, Val MRR: 0.0370, Val Hits@10: 0.0770
+Epoch: 201, Loss: 0.0813
+Epoch: 202, Loss: 0.0814
+Epoch: 203, Loss: 0.0815
+Epoch: 204, Loss: 0.0816
+Epoch: 205, Loss: 0.0813
+Epoch: 206, Loss: 0.0812
+Epoch: 207, Loss: 0.0811
+Epoch: 208, Loss: 0.0813
+Epoch: 209, Loss: 0.0814
+Epoch: 210, Loss: 0.0809
+Saving Model
+Testing Model
+Epoch: 210, Val Mean Rank: 1341.19, Val MRR: 0.0373, Val Hits@10: 0.0767
+Epoch: 211, Loss: 0.0815
+Epoch: 212, Loss: 0.0813
+Epoch: 213, Loss: 0.0814
+Epoch: 214, Loss: 0.0810
+Epoch: 215, Loss: 0.0810
+Epoch: 216, Loss: 0.0812
+Epoch: 217, Loss: 0.0811
+Epoch: 218, Loss: 0.0812
+Epoch: 219, Loss: 0.0810
+Epoch: 220, Loss: 0.0810
+Saving Model
+Testing Model
+Epoch: 220, Val Mean Rank: 1345.82, Val MRR: 0.0376, Val Hits@10: 0.0766
+Epoch: 221, Loss: 0.0812
+Epoch: 222, Loss: 0.0808
+Epoch: 223, Loss: 0.0809
+Epoch: 224, Loss: 0.0813
+Epoch: 225, Loss: 0.0809
+Epoch: 226, Loss: 0.0812
+Epoch: 227, Loss: 0.0809
+Epoch: 228, Loss: 0.0811
+Epoch: 229, Loss: 0.0809
+Epoch: 230, Loss: 0.0807
+Saving Model
+Testing Model
+Epoch: 230, Val Mean Rank: 1398.66, Val MRR: 0.0375, Val Hits@10: 0.0761
+Epoch: 231, Loss: 0.0813
+Epoch: 232, Loss: 0.0807
+Epoch: 233, Loss: 0.0811
+Epoch: 234, Loss: 0.0808
+Epoch: 235, Loss: 0.0812
+Epoch: 236, Loss: 0.0811
+Epoch: 237, Loss: 0.0806
+Epoch: 238, Loss: 0.0806
+Epoch: 239, Loss: 0.0807
+Epoch: 240, Loss: 0.0805
+Saving Model
+Testing Model
+Epoch: 240, Val Mean Rank: 1426.03, Val MRR: 0.0378, Val Hits@10: 0.0762
+Epoch: 241, Loss: 0.0808
+Epoch: 242, Loss: 0.0809
+Epoch: 243, Loss: 0.0810
+Epoch: 244, Loss: 0.0809
+Epoch: 245, Loss: 0.0806
+Epoch: 246, Loss: 0.0807
+Epoch: 247, Loss: 0.0807
+Epoch: 248, Loss: 0.0805
+Epoch: 249, Loss: 0.0806
+Epoch: 250, Loss: 0.0808
+Saving Model
+Testing Model
+Epoch: 250, Val Mean Rank: 1443.29, Val MRR: 0.0371, Val Hits@10: 0.0769
+Epoch: 251, Loss: 0.0808
+Epoch: 252, Loss: 0.0808
+Epoch: 253, Loss: 0.0807
+Epoch: 254, Loss: 0.0808
+Epoch: 255, Loss: 0.0808
+Epoch: 256, Loss: 0.0807
+Epoch: 257, Loss: 0.0806
+Epoch: 258, Loss: 0.0807
+Epoch: 259, Loss: 0.0805
+Epoch: 260, Loss: 0.0805
+Saving Model
+Testing Model
+Epoch: 260, Val Mean Rank: 1462.01, Val MRR: 0.0371, Val Hits@10: 0.0774
+Epoch: 261, Loss: 0.0804
+Epoch: 262, Loss: 0.0806
+Epoch: 263, Loss: 0.0805
+Epoch: 264, Loss: 0.0805
+Epoch: 265, Loss: 0.0804
+Epoch: 266, Loss: 0.0807
+Epoch: 267, Loss: 0.0804
+Epoch: 268, Loss: 0.0806
+Epoch: 269, Loss: 0.0807
+Epoch: 270, Loss: 0.0808
+Saving Model
+Testing Model
+Epoch: 270, Val Mean Rank: 1498.78, Val MRR: 0.0373, Val Hits@10: 0.0766
+Epoch: 271, Loss: 0.0804
+Epoch: 272, Loss: 0.0802
+Epoch: 273, Loss: 0.0808
+Epoch: 274, Loss: 0.0807
+Epoch: 275, Loss: 0.0804
+Epoch: 276, Loss: 0.0807
+Epoch: 277, Loss: 0.0806
+Epoch: 278, Loss: 0.0806
+Epoch: 279, Loss: 0.0804
+Epoch: 280, Loss: 0.0806
+Saving Model
+Testing Model
+Epoch: 280, Val Mean Rank: 1513.61, Val MRR: 0.0374, Val Hits@10: 0.0763
+Epoch: 281, Loss: 0.0807
+Epoch: 282, Loss: 0.0804
+Epoch: 283, Loss: 0.0804
+Epoch: 284, Loss: 0.0803
+Epoch: 285, Loss: 0.0807
+Epoch: 286, Loss: 0.0799
+Epoch: 287, Loss: 0.0807
+Epoch: 288, Loss: 0.0804
+Epoch: 289, Loss: 0.0804
+Epoch: 290, Loss: 0.0807
+Saving Model
+Testing Model
+Epoch: 290, Val Mean Rank: 1530.33, Val MRR: 0.0375, Val Hits@10: 0.0770
+Epoch: 291, Loss: 0.0805
+Epoch: 292, Loss: 0.0806
+Epoch: 293, Loss: 0.0809
+Epoch: 294, Loss: 0.0805
+Epoch: 295, Loss: 0.0806
+Epoch: 296, Loss: 0.0806
+Epoch: 297, Loss: 0.0799
+Epoch: 298, Loss: 0.0802
+Epoch: 299, Loss: 0.0799
+Epoch: 300, Loss: 0.0806
+Saving Model
+Testing Model
+Epoch: 300, Val Mean Rank: 1554.46, Val MRR: 0.0373, Val Hits@10: 0.0763
+Epoch: 301, Loss: 0.0801
+Epoch: 302, Loss: 0.0799
+Epoch: 303, Loss: 0.0802
+Epoch: 304, Loss: 0.0802
+Epoch: 305, Loss: 0.0803
+Epoch: 306, Loss: 0.0802
+Epoch: 307, Loss: 0.0801
+Epoch: 308, Loss: 0.0803
+Epoch: 309, Loss: 0.0803
+Epoch: 310, Loss: 0.0802
+Saving Model
+Testing Model
+Epoch: 310, Val Mean Rank: 1558.05, Val MRR: 0.0371, Val Hits@10: 0.0762
+Epoch: 311, Loss: 0.0802
+Epoch: 312, Loss: 0.0802
+Epoch: 313, Loss: 0.0804
+Epoch: 314, Loss: 0.0801
+Epoch: 315, Loss: 0.0801
+Epoch: 316, Loss: 0.0804
+Epoch: 317, Loss: 0.0803
+Epoch: 318, Loss: 0.0802
+Epoch: 319, Loss: 0.0799
+Epoch: 320, Loss: 0.0800
+Saving Model
+Testing Model
+Epoch: 320, Val Mean Rank: 1559.02, Val MRR: 0.0375, Val Hits@10: 0.0769
+Epoch: 321, Loss: 0.0802
+Epoch: 322, Loss: 0.0799
+Epoch: 323, Loss: 0.0803
+Epoch: 324, Loss: 0.0800
+Epoch: 325, Loss: 0.0805
+Epoch: 326, Loss: 0.0801
+Epoch: 327, Loss: 0.0800
+Epoch: 328, Loss: 0.0805
+Epoch: 329, Loss: 0.0798
+Epoch: 330, Loss: 0.0798
+Saving Model
+Testing Model
+Epoch: 330, Val Mean Rank: 1540.68, Val MRR: 0.0379, Val Hits@10: 0.0773
+Epoch: 331, Loss: 0.0801
+Epoch: 332, Loss: 0.0801
+Epoch: 333, Loss: 0.0804
+Epoch: 334, Loss: 0.0805
+Epoch: 335, Loss: 0.0799
+Epoch: 336, Loss: 0.0797
+Epoch: 337, Loss: 0.0802
+Epoch: 338, Loss: 0.0798
+Epoch: 339, Loss: 0.0800
+Epoch: 340, Loss: 0.0805
+Saving Model
+Testing Model
+Epoch: 340, Val Mean Rank: 1533.78, Val MRR: 0.0374, Val Hits@10: 0.0766
+Epoch: 341, Loss: 0.0805
+Epoch: 342, Loss: 0.0802
+Epoch: 343, Loss: 0.0802
+Epoch: 344, Loss: 0.0801
+Epoch: 345, Loss: 0.0804
+Epoch: 346, Loss: 0.0804
+Epoch: 347, Loss: 0.0805
+Epoch: 348, Loss: 0.0801
+Epoch: 349, Loss: 0.0801
+Epoch: 350, Loss: 0.0803
+Saving Model
+Testing Model
+Epoch: 350, Val Mean Rank: 1566.10, Val MRR: 0.0376, Val Hits@10: 0.0770
+Epoch: 351, Loss: 0.0798
+Epoch: 352, Loss: 0.0800
+Epoch: 353, Loss: 0.0804
+Epoch: 354, Loss: 0.0800
+Epoch: 355, Loss: 0.0801
+Epoch: 356, Loss: 0.0798
+Epoch: 357, Loss: 0.0802
+Epoch: 358, Loss: 0.0801
+Epoch: 359, Loss: 0.0800
+Epoch: 360, Loss: 0.0798
+Saving Model
+Testing Model
+Epoch: 360, Val Mean Rank: 1584.60, Val MRR: 0.0375, Val Hits@10: 0.0768
+Epoch: 361, Loss: 0.0801
+Epoch: 362, Loss: 0.0801
+Epoch: 363, Loss: 0.0803
+Epoch: 364, Loss: 0.0801
+Epoch: 365, Loss: 0.0797
+Epoch: 366, Loss: 0.0801
+Epoch: 367, Loss: 0.0802
+Epoch: 368, Loss: 0.0799
+Epoch: 369, Loss: 0.0802
+Epoch: 370, Loss: 0.0801
+Saving Model
+Testing Model
+Epoch: 370, Val Mean Rank: 1593.43, Val MRR: 0.0373, Val Hits@10: 0.0766
+Epoch: 371, Loss: 0.0801
+Epoch: 372, Loss: 0.0806
+Epoch: 373, Loss: 0.0800
+Epoch: 374, Loss: 0.0802
+Epoch: 375, Loss: 0.0799
+Epoch: 376, Loss: 0.0800
+Epoch: 377, Loss: 0.0800
+Epoch: 378, Loss: 0.0798
+Epoch: 379, Loss: 0.0800
+Epoch: 380, Loss: 0.0796
+Saving Model
+Testing Model
+Epoch: 380, Val Mean Rank: 1626.86, Val MRR: 0.0377, Val Hits@10: 0.0774
+Epoch: 381, Loss: 0.0799
+Epoch: 382, Loss: 0.0797
+Epoch: 383, Loss: 0.0802
+Epoch: 384, Loss: 0.0802
+Epoch: 385, Loss: 0.0802
+Epoch: 386, Loss: 0.0796
+Epoch: 387, Loss: 0.0802
+Epoch: 388, Loss: 0.0800
+Epoch: 389, Loss: 0.0798
+Epoch: 390, Loss: 0.0799
+Saving Model
+Testing Model
+Epoch: 390, Val Mean Rank: 1643.30, Val MRR: 0.0381, Val Hits@10: 0.0784
+Epoch: 391, Loss: 0.0801
+Epoch: 392, Loss: 0.0800
+Epoch: 393, Loss: 0.0800
+Epoch: 394, Loss: 0.0798
+Epoch: 395, Loss: 0.0801
+Epoch: 396, Loss: 0.0797
+Epoch: 397, Loss: 0.0800
+Epoch: 398, Loss: 0.0799
+Epoch: 399, Loss: 0.0801
+Epoch: 400, Loss: 0.0802
+Saving Model
+Testing Model
+Epoch: 400, Val Mean Rank: 1669.87, Val MRR: 0.0376, Val Hits@10: 0.0775
+Epoch: 401, Loss: 0.0801
+Epoch: 402, Loss: 0.0802
+Epoch: 403, Loss: 0.0798
+Epoch: 404, Loss: 0.0798
+Epoch: 405, Loss: 0.0802
+Epoch: 406, Loss: 0.0800
+Epoch: 407, Loss: 0.0800
+Epoch: 408, Loss: 0.0798
+Epoch: 409, Loss: 0.0801
+Epoch: 410, Loss: 0.0800
+Saving Model
+Testing Model
+Epoch: 410, Val Mean Rank: 1693.29, Val MRR: 0.0375, Val Hits@10: 0.0776
+Epoch: 411, Loss: 0.0800
+Epoch: 412, Loss: 0.0795
+Epoch: 413, Loss: 0.0798
+Epoch: 414, Loss: 0.0796
+Epoch: 415, Loss: 0.0799
+Epoch: 416, Loss: 0.0798
+Epoch: 417, Loss: 0.0801
+Epoch: 418, Loss: 0.0799
+Epoch: 419, Loss: 0.0800
+Epoch: 420, Loss: 0.0797
+Saving Model
+Testing Model
+Epoch: 420, Val Mean Rank: 1730.62, Val MRR: 0.0374, Val Hits@10: 0.0774
+Epoch: 421, Loss: 0.0796
+Epoch: 422, Loss: 0.0800
+Epoch: 423, Loss: 0.0794
+Epoch: 424, Loss: 0.0797
+Epoch: 425, Loss: 0.0799
+Epoch: 426, Loss: 0.0802
+Epoch: 427, Loss: 0.0799
+Epoch: 428, Loss: 0.0800
+Epoch: 429, Loss: 0.0797
+Epoch: 430, Loss: 0.0798
+Saving Model
+Testing Model
+Epoch: 430, Val Mean Rank: 1751.86, Val MRR: 0.0376, Val Hits@10: 0.0770
+Epoch: 431, Loss: 0.0798
+Epoch: 432, Loss: 0.0800
+Epoch: 433, Loss: 0.0800
+Epoch: 434, Loss: 0.0798
+Epoch: 435, Loss: 0.0798
+Epoch: 436, Loss: 0.0795
+Epoch: 437, Loss: 0.0796
+Epoch: 438, Loss: 0.0797
+Epoch: 439, Loss: 0.0798
+Epoch: 440, Loss: 0.0798
+Saving Model
+Testing Model
+Epoch: 440, Val Mean Rank: 1776.99, Val MRR: 0.0374, Val Hits@10: 0.0777
+Epoch: 441, Loss: 0.0798
+Epoch: 442, Loss: 0.0798
+Epoch: 443, Loss: 0.0800
+Epoch: 444, Loss: 0.0801
+Epoch: 445, Loss: 0.0799
+Epoch: 446, Loss: 0.0798
+Epoch: 447, Loss: 0.0796
+Epoch: 448, Loss: 0.0798
+Epoch: 449, Loss: 0.0796
+Epoch: 450, Loss: 0.0800
+Saving Model
+Testing Model
+Epoch: 450, Val Mean Rank: 1807.30, Val MRR: 0.0376, Val Hits@10: 0.0779
+Epoch: 451, Loss: 0.0797
+Epoch: 452, Loss: 0.0797
+Epoch: 453, Loss: 0.0799
+Epoch: 454, Loss: 0.0800
+Epoch: 455, Loss: 0.0798
+Epoch: 456, Loss: 0.0799
+Epoch: 457, Loss: 0.0794
+Epoch: 458, Loss: 0.0800
+Epoch: 459, Loss: 0.0796
+Epoch: 460, Loss: 0.0799
+Saving Model
+Testing Model
+Epoch: 460, Val Mean Rank: 1819.16, Val MRR: 0.0375, Val Hits@10: 0.0771
+Epoch: 461, Loss: 0.0795
+Epoch: 462, Loss: 0.0796
+Epoch: 463, Loss: 0.0795
+Epoch: 464, Loss: 0.0797
+Epoch: 465, Loss: 0.0799
+Epoch: 466, Loss: 0.0798
+Epoch: 467, Loss: 0.0797
+Epoch: 468, Loss: 0.0799
+Epoch: 469, Loss: 0.0798
+Epoch: 470, Loss: 0.0796
+Saving Model
+Testing Model
+Epoch: 470, Val Mean Rank: 1827.89, Val MRR: 0.0379, Val Hits@10: 0.0768
+Epoch: 471, Loss: 0.0797
+Epoch: 472, Loss: 0.0799
+Epoch: 473, Loss: 0.0796
+Epoch: 474, Loss: 0.0798
+Epoch: 475, Loss: 0.0796
+Epoch: 476, Loss: 0.0798
+Epoch: 477, Loss: 0.0796
+Epoch: 478, Loss: 0.0795
+Epoch: 479, Loss: 0.0799
+Epoch: 480, Loss: 0.0799
+Saving Model
+Testing Model
+Epoch: 480, Val Mean Rank: 1846.96, Val MRR: 0.0378, Val Hits@10: 0.0765
+Epoch: 481, Loss: 0.0797
+Epoch: 482, Loss: 0.0799
+Epoch: 483, Loss: 0.0800
+Epoch: 484, Loss: 0.0797
+Epoch: 485, Loss: 0.0797
+Epoch: 486, Loss: 0.0799
+Epoch: 487, Loss: 0.0796
+Epoch: 488, Loss: 0.0799
+Epoch: 489, Loss: 0.0797
+Epoch: 490, Loss: 0.0798
+Saving Model
+Testing Model
+Epoch: 490, Val Mean Rank: 1803.79, Val MRR: 0.0380, Val Hits@10: 0.0774
+Epoch: 491, Loss: 0.0796
+Epoch: 492, Loss: 0.0797
+Epoch: 493, Loss: 0.0793
+Epoch: 494, Loss: 0.0796
+Epoch: 495, Loss: 0.0797
+Epoch: 496, Loss: 0.0795
+Epoch: 497, Loss: 0.0799
+Epoch: 498, Loss: 0.0794
+Epoch: 499, Loss: 0.0797
+One last test
+Traceback (most recent call last):
+  File "/workspace/data/protoroborotor/src/run_rot.py", line 120, in <module>
+    main(args)
+  File "/workspace/data/protoroborotor/src/run_rot.py", line 79, in main
+    rank, mrr, hits_at_10 = test(test_data)
+  File "/usr/local/lib/python3.10/dist-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+TypeError: test() missing 1 required positional argument: 'model'
